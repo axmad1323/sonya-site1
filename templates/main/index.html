@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для Сони</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Серый фон */
+            font-family: Arial, sans-serif;
+            color: #333; /* Темно-серый текст */
+            overflow: hidden; /* Скрыть лишние элементы */
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2; /* Над цветами */
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #555; /* Серый текст */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень для текста */
+            animation: colorChange 5s infinite alternate; /* Анимация цвета текста */
+        }
+
+        .heart {
+            font-size: 6rem; /* Уменьшенный размер сердца */
+            color: #ff6b6b; /* Розовый цвет сердца */
+            position: absolute;
+            top: -30px; /* Поднято выше */
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s infinite ease-in-out; /* Анимация плавания */
+            cursor: pointer;
+            transition: color 0.5s ease; /* Плавное изменение цвета */
+            z-index: 1; /* Под текстом */
+        }
+
+        .heart:hover {
+            color: #ff0000; /* Красный цвет при наведении */
+        }
+
+        .message {
+            font-size: 2rem;
+            color: #555;
+            margin-top: 20px;
+            animation: fadeIn 3s infinite alternate; /* Анимация появления */
+        }
+
+        /* Анимация изменения цвета текста */
+        @keyframes colorChange {
+            0% {
+                color: #555;
+            }
+            100% {
+                color: #ff6b6b;
+            }
+        }
+
+        /* Анимация плавания сердца */
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Анимация появления текста */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Стили для роз */
+        .rose {
+            position: absolute;
+            font-size: 5rem;
+            color: #ff0000; /* Красный цвет роз */
+            animation: floatRose 4s infinite ease-in-out; /* Анимация плавания роз */
+        }
+
+        /* Позиции верхних роз */
+        .rose.top-left {
+            top: 10%;
+            left: 10%;
+        }
+
+        .rose.top-right {
+            top: 10%;
+            right: 10%;
+        }
+
+        /* Позиции нижних роз */
+        .rose.bottom-left {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        .rose.bottom-right {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        /* Анимация плавания роз */
+        @keyframes floatRose {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхние розы -->
+    <div class="rose top-left">🌹</div>
+    <div class="rose top-right">🌹</div>
+
+    <!-- Нижние розы -->
+    <div class="rose bottom-left">🌹</div>
+    <div class="rose bottom-right">🌹</div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <!-- Сердце -->
+        <div class="heart">❤️</div>
+
+        <!-- Надпись "Для Сони" -->
+        <h1>Для Сони</h1>
+
+        <!-- Дополнительная надпись -->
+        <div class="message">Лучшей женщине</div>
+    </div>
+</body>
+</html>
